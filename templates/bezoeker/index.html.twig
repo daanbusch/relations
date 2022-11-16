@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BezoekerController!{% endblock %}
+
+{% block body %}
+{#{{ dump(products) }}#}
+    <table>
+        <thead>
+        <tr>
+            <th>naam</th>
+            <th>image</th>
+            <th>description</th>
+            <th>category</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }} </td>
+                <td><img src="{{ asset('img/' ~ product.image) }}"> </td>
+                <td>{{ product.description }} </td>
+                <td>{{ product.category.name }} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}
